@@ -34,7 +34,8 @@ export default defineConfig(({ command, mode }) => {
       // 本地跨域代理 -> 代理到服务器的接口地址
       proxy: {
         '/api': {
-          target: 'http://139.196.92.110:31111/',
+          // target: 'http://139.196.92.110:31111/',
+          target: env.VITE_API_BASE_URL,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, '')
         },
